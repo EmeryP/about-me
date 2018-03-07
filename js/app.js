@@ -1,6 +1,6 @@
 'use strict';
 
-
+//  creating a function to initiate the quiz
 document.getElementById('Emery').onclick = function(){
 
 // question #1
@@ -51,11 +51,11 @@ var married = (prompt('Do you think I am married?')).toLowerCase();
 var codePro = (prompt('Am I a professional coder? Yes or No? and be careful of your response...')).toLowerCase();
 
   if (codePro === 'yes' || codePro === 'y') {
-    alert('Wrong guess, I am a striving to be a pro but not quite a pro yet');
-    console.log('Wrong guess, I am striving to be a pro but not quite a pro yet');
-  } else {
     alert('Thanks for the confidence boost but I am not a pro yet');
     console.log('Thanks for the confidence boost but I am not a pro yet');
+  } else {
+    alert('You\'re right, I am not a pro but am striving to be one soon');
+    console.log('You\'re right, I am not a pro but am striving to be one soon');
   }
 
 };
