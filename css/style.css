@@ -1,11 +1,30 @@
 body{
-  background-color: blue; 
+  border-width: 10px 1px 5px 20px;
+	border-color: solid #bdc3c7;
+	max-width: 700px;
+	width: 100%;
+	margin: 20px auto;
+	padding: 20px;
 }
 
 h1{
-  color: white;
+  color: black;
+  font-size: 40px;
+  text-align: center;
 }
 
 p{
-  color: white;
+  color:black;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 25px;
+  
+}
+
+img{
+  width: 30%;
+  border-radius: 50%;
+  border: black 5px solid;
+  margin-left: 250px;
+  margin-top: 25px;
 }
