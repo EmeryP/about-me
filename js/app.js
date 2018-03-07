@@ -40,7 +40,7 @@ var travel = (prompt('Does traveling the world excite me? Yes or No?')).toUpperC
 var married = (prompt('Do you think I am married?')).toLowerCase();
 
   if (married === 'yes' || married === 'y') {
-    alert('Correct answer, I have been married for 1 year. Y or N?');
+    alert('Correct answer, I have been married for 1 year.');
     console.log('Correct answer, I have been married for 1 year');
   } else {
     alert('Wrong answer, I have been married for 1 year');
