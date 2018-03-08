@@ -10,10 +10,29 @@ h1{
   margin: 25px;
 }
 
+h3{
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 p{
   color:black;
   font-size: 30px;
   text-align: center;
+}
+
+ol{
+  color:black;
+  font-size: 20px;
+  margin: 10px;
+  display: block !important;
+}
+
+ul{
+  color:black;
+  font-size: 20px;
+  margin: 10px;
 }
 
 img{

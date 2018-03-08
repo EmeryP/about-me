@@ -1,9 +1,12 @@
 'use strict';
 
+// document.getElementById('Emery').onclick = function(){ function used for clicking button to initiate js
+
 var correctAnswer = 0;
 
 // Ask user their name
 var userName = (prompt('Can you remind me of your name?'));
+console.log('Usersname is ' + userName);
 
 // question #1
 var transportation = (prompt('Do I ride a bike to Code Fellows? Yes or No?')).toLowerCase();
@@ -73,7 +76,7 @@ for (var i = 0; i < 4; i++) {
 
   if (cars === 5 ) {
     alert('Correct!');
-    console.log('Correct!');
+    console.log('Correct! I have owned 5 different cars in my life.');
     correctAnswer++;
     break;
   } else if(cars < 5) {
@@ -87,7 +90,7 @@ for (var i = 0; i < 4; i++) {
 
 // Question #7
 
-var favColor = ['red', ' blue', ' orange', ' green']; //est var array
+var favColor = ['red', 'blue', 'orange', 'green']; //est var array
 
 var answer = false; //set answer to false
 var guessCount = 0; //set # of guesses to 0
@@ -101,7 +104,8 @@ while (answer === false){ //while anwwer = 0, run this code
     userColor = prompt('Nope guess again').toLowerCase(); //prompt user to answer question, store answer in var
     guessCount++; //update guessCount var by adding 1 each time this code runs
   } else if(guessCount === 6){ //else if count === 6, run the following code
-    alert('Close but no cigar, my 4 favorite colors are ' + favColor); //alert the user if this condition is met    
+    alert('Close but no cigar, my 4 favorite colors are ' + favColor); //alert the user if this condition is met 
+    console.log('Close but no cigar, my 4 favorite colors are ' + favColor);
     break; //stop the loop once the count = 6
   }
 
@@ -109,6 +113,7 @@ while (answer === false){ //while anwwer = 0, run this code
 
     if (userColor === favColor[j]){ //if user input is equal to an element in the array
       alert('You\'re right, my 4 favorite colors are ' + favColor); //alert the user youre correct if this condition is met
+      console.log('You\'re right, my 4 favorite colors are ' + favColor);
       guessCount++; //increment the guess count
       answer = true; //flip the value of answer to true if the for loop evaluates to be true
     }
@@ -116,5 +121,7 @@ while (answer === false){ //while anwwer = 0, run this code
 }
 
 alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct'); //alert user of their score
+console.log('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');
+// } onClick closing
 
 
