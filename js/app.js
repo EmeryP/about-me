@@ -87,33 +87,34 @@ for (var i = 0; i < 4; i++) {
 
 // Question #7
 
-var favColor = ['red', 'blue', 'orange', 'green'];
+var favColor = ['red', ' blue', ' orange', ' green']; //est var array
 
-var answer = false; //est variable to being false initially
-var guessCount = 0; //used to count the number of guesses
+var answer = false; //set answer to false
+var guessCount = 0; //set # of guesses to 0
 
-while (answer === false){ //run this code as long as answer equals false
+while (answer === false){ //while anwwer = 0, run this code
 
-  if(guessCount === 0){ //if guess count === 0
-    var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase(); //prompt user
-    guessCount++;
+  if(guessCount === 0){ //if guess count = 0, run the following code
+    var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase(); // prompt user and store as var
+    guessCount++; //update guessCount var by adding 1
+  } else if(guessCount < 6 && guessCount > 0) { //else if guessCount is less than 6 and greater than 0, run the following code
+    userColor = prompt('Nope guess again').toLowerCase(); //prompt user to answer question, store answer in var
+    guessCount++; //update guessCount var by adding 1 each time this code runs
+  } else if(guessCount === 6){ //else if count === 6, run the following code
+    alert('Close but no cigar, my 4 favorite colors are ' + favColor); //alert the user if this condition is met    
+    break; //stop the loop once the count = 6
   }
-  else if(guessCount < 6 && guessCount > 0) {
-    userColor = prompt('Nope guess again').toLowerCase();     
-    guessCount++;
-  } else if(guessCount === 6){
-    break;
-  }
 
-  for(var j = 0; j < favColor.length; j++){
+  for(var j = 0; j < favColor.length; j++){ //use for loop to iterate through the length of the array favColor
 
-    if (userColor === favColor[j]){ //if user input is equal to array length
-      alert('You\'re right, my 4 favorite colors are ' + favColor); //alert the user youre correct
+    if (userColor === favColor[j]){ //if user input is equal to an element in the array
+      alert('You\'re right, my 4 favorite colors are ' + favColor); //alert the user youre correct if this condition is met
       guessCount++; //increment the guess count
-      answer = true;
+      answer = true; //flip the value of answer to true if the for loop evaluates to be true
     }
   }
 }
-alert('Good try ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');
+
+alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct'); //alert user of their score
 
 
