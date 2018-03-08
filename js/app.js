@@ -87,7 +87,33 @@ for (var i = 0; i < 4; i++) {
 
 // Question #7
 
+var favColor = ['red', 'blue', 'orange', 'green'];
 
+var answer = false; //est variable to being false initially
+var guessCount = 0; //used to count the number of guesses
 
+while (answer === false){ //run this code as long as answer equals false
+
+  if(guessCount === 0){ //if guess count === 0
+    var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase(); //prompt user
+    guessCount++;
+  }
+  else if(guessCount < 6 && guessCount > 0) {
+    userColor = prompt('Nope guess again').toLowerCase();     
+    guessCount++;
+  } else if(guessCount === 6){
+    break;
+  }
+
+  for(var j = 0; j < favColor.length; j++){
+
+    if (userColor === favColor[j]){ //if user input is equal to array length
+      alert('You\'re right, my 4 favorite colors are ' + favColor); //alert the user youre correct
+      guessCount++; //increment the guess count
+      answer = true;
+    }
+  }
+}
 alert('Good try ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');
+
 
