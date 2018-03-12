@@ -1,23 +1,28 @@
 'use strict';
 
-// document.getElementById('Emery').onclick = function(){
+document.getElementById('Emery').onclick = function(){
 
-// Ask user their name
+  question0();
+  question1();
+  question2();
+  question3();
+  question4();
+  question5();
+  question6();
+  question7();
 
-var userName = (prompt('Can you remind me of your name?'));
-console.log('Usersname is ' + userName);
+  alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct'); //alert user of their score
+  console.log('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');
+
+};
 
 var correctAnswer = 0;
 
-question1();
-question2();
-question3();
-question4();
-question5();
-question6();
-question7();
+function question0() {
+  var userName = (prompt('Enter your name to start the game!'));
+  console.log('Usersname is ' + userName);
+}
 
-// var q1 = document.getElementById('Emery').onclick = function(){
 // question #1
 function question1() {
 
@@ -80,40 +85,52 @@ function question5() {
   if (codePro === 'yes' || codePro === 'y') {
     alert('Thanks for the confidence boost but I am not a pro yet');
     console.log('Thanks for the confidence boost but I am not a pro yet');
-  } else {
+  } else if (codePro === 'no' || codePro === 'n'){
     alert('You\'re right, I am not a pro but am striving to be one soon');
     console.log('You\'re right, I am not a pro but am striving to be one soon');
     correctAnswer++;
+  } else {
+    alert('I dont recognize that response... you might want to guess again.');
   }
 }
+
 // Question #6
-function question6() {
-  for (var i = 0; i < 4; i++) {
+function question6(){ //creating function6
 
-    var cars = parseInt(prompt('How many cars have I owned? You only get 4 guesses so guess wisely!'));
+  var userNum = parseInt(prompt('Guess any number between 1 - 10')); //prompt user to guess a number
+  var randNum = Math.floor(Math.random() * 10 + 1); //generate a random number between 1 and 10
+  console.log(randNum);
+  var randGuess = 0; //create guess counter
 
-    if (cars === 5 ) {
-      alert('Correct!');
-      console.log('Correct! I have owned 5 different cars in my life.');
+  while (randGuess >= 0 && randGuess < 4) { //run the following code while these expressions are true
+    if (userNum < randNum) { //if user guess is lower than random number, run the following code
+      userNum = parseInt(prompt('Too low, guess again')); //prompt user to guess again
+      randGuess++; //increase guesses counter by 1
+    } else if (userNum > randNum) { //if user guess is higher than random number, run the following code
+      userNum = parseInt(prompt('Too high, guess again')); //prompt user to guess again
+      randGuess++; //increase guesses counter by 1
+    } else if(userNum === randNum){ //if user guess is equal to random number, run the following code
+      alert('You nailed it!'); //alert the user they guessed correctly
+      console.log('You nailed it!'); //log the result
       correctAnswer++;
-      break;
-    } else if(cars < 5) {
-      alert('Too low, try again');
-      console.log('Too low, try again');
-    } else if(cars > 5){
-      alert('Too high, guess again');
-      console.log('Too high, guess again');
+    } else {
+      userNum = parseInt(prompt('I didnt recognize any input, guess again'));
+      randGuess++;
     }
   }
+  alert('You\'re out of guesses, better luck next time!'); //alert the user game is over
+  console.log('You\'re out of guesses, better luck next time!');
 }
+
 // Question #7
 function question7() {
   var favColor = ['red', 'blue', 'orange', 'green']; //est var array
+  var favColorUX = ['red, blue, orange, and green']; //create readable var for UX  
 
-  var answer = false; //set answer to false
+  var answer = true; //set answer to true
   var guessCount = 0; //set # of guesses to 0
 
-  while (answer === false){ //while anwwer = 0, run this code
+  while (answer === true){ //while answer = 0, run this code
 
     if(guessCount === 0){ //if guess count = 0, run the following code
       var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase(); // prompt user and store as var
@@ -122,21 +139,21 @@ function question7() {
       userColor = prompt('Nope guess again').toLowerCase(); //prompt user to answer question, store answer in var
       guessCount++; //update guessCount var by adding 1 each time this code runs
     } else if(guessCount === 6){ //else if count === 6, run the following code
-      alert('Close but no cigar, my 4 favorite colors are ' + favColor); //alert the user if this condition is met
-      console.log('Close but no cigar, my 4 favorite colors are ' + favColor);
-      break; //stop the loop once the count = 6
+      alert('Close but no cigar, my 4 favorite colors are ' + favColorUX); //alert the user if this condition is met
+      console.log('Close but no cigar, my 4 favorite colors are ' + favColorUX);
+      answer = false;
+      // break //stop the loop once the count = 6
     }
 
     for(var j = 0; j < favColor.length; j++){ //use for loop to iterate through the length of the array favColor
 
       if (userColor === favColor[j]){ //if user input is equal to an element in the array
-        alert('You\'re right, my 4 favorite colors are ' + favColor); //alert the user youre correct if this condition is met
-        console.log('You\'re right, my 4 favorite colors are ' + favColor);
+        alert('You\'re right, my 4 favorite colors are ' + favColorUX); //alert the user youre correct if this condition is met
+        console.log('You\'re right, my 4 favorite colors are ' + favColorUX);
         guessCount++; //increment the guess count
-        answer = true; //flip the value of answer to true if the for loop evaluates to be true
+        correctAnswer++;
+        answer = false; //flip the value of answer to true if the for loop evaluates to be true
       }
     }
   }
 }
-alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct'); //alert user of their score
-console.log('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');

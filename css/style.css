@@ -1,7 +1,7 @@
 body{
 	max-width: 750px;
   margin: 25px auto;
-  background-color: #e5dad3; 
+  background-color: #e5dad3;
 }
 
 h1{
@@ -43,5 +43,9 @@ img{
   width: 250px;
   border-radius: 50%;
   border: black 5px solid;
-  margin: 25px 33.33%;
+  margin: 25px 33.3%;
+}
+
+.medium-6{
+  max-width: 45%;
 }
