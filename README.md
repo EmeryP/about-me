@@ -1,31 +1,13 @@
-# about-me
-About me project for week 1 of code 201.
-****************************************
+## About Me
+This about me project was created during my time in the Code Fellows 201 course as a fun way to practice CSS, HTML and JS.
 
-3/11/18 Update:
-***************
-Added random number generator for question 6. Updated questions 1-5 to be more fun. Added the .onClick method as a fun feature to start the game.
+## Getting started
+* Fork and clone this repo to your local machine
+* Open the `index.html` file in your browser
+* Click on the picture of me to start the "Get to know me game"
 
-3/8/18 Update:
-**************
-Pair programming, Max Suman Driver, Emery Parks Navigator, converted all 7 questions from statements to functions. 
-
-3/7/18 Update:
-**************
-Added questions 6 & 7 to demonstrate use of for and while loops.
-
-Removed the functionality to initiate JS code with click of mouse on image.
-
-3/6/18 Original publishing:
-***************************
-This is a yes or no quiz meant to demonstrate the use of boolean operators.
-
-To take the quiz, click on the picture and answer the questions that are prompted.
-
-Websites I referenced:
-**********************
-Max Suman, class mate
-
-https://www.w3schools.com/css/css3_images.asp
-
-https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+#### Resources/Credits
+* Max Suman, Code Fellows instructors
+* https://www.w3schools.com/
+* https://developer.mozilla.org/
+* https://css-tricks.com/

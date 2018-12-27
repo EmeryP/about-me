@@ -1,6 +1,6 @@
 'use strict';
 
-document.getElementById('Emery').onclick = function(){
+document.getElementById('Emery').onclick = function () {
 
   var correctAnswer = 0;
 
@@ -15,9 +15,8 @@ document.getElementById('Emery').onclick = function(){
   question6();
   question7();
 
-  alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct'); //alert user of their score
-  console.log('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers to be correct');
-
+  alert('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers correctly.');
+  console.log('Good work ' + userName + ' you guessed ' + correctAnswer + ' out of 7 answers correctly.');
 
   // Question #1
   function question1() {
@@ -64,7 +63,7 @@ document.getElementById('Emery').onclick = function(){
 
   // Question #4
   function question4() {
-    var bali = (prompt('Do you think I have traveled to Bali?')).toLowerCase();
+    var bali = (prompt('Do you think I really have traveled to Bali?')).toLowerCase();
 
     if (bali === 'yes' || bali === 'y') {
       alert('That\'s right! I spent 2 weeks in Bali a few years ago with some friends and it was awesome!');
@@ -78,36 +77,36 @@ document.getElementById('Emery').onclick = function(){
 
   // Question #5
   function question5() {
-    var codePro = (prompt('Am I a professional coder? and be careful of your response...')).toLowerCase();
+    var surfer = (prompt('Does it look like I could actually surf a real live wave??')).toLowerCase();
 
-    if (codePro === 'yes' || codePro === 'y') {
-      alert('Thanks for the confidence boost but not yet!');
-      console.log('Thanks for the confidence boost but not yet!');
+    if (surfer === 'yes' || surfer === 'y') {
+      alert('Yes it\'s true I can successfully surf small waves!');
+      console.log('Yes it\'s true I can successfully surf small waves!');
     } else {
-      alert('Sadly you\'re right, I need a few more hours behind a keyboard before I reach that level');
-      console.log('Sadly you\'re right, I need a few more hours behind a keyboard before I reach that level');
+      alert('Good guess and I can see why you guessed that but it\'s true I can successfully surf small waves.');
+      console.log('Good guess and I can see why you guessed that but it\'s true I can successfully surf small waves.');
       correctAnswer++;
     }
   }
 
   // Question #6
-  function question6(){ //creating function6
+  function question6() {
 
-    var userNum = parseInt(prompt('Guess any number between 1 - 10')); //prompt user to guess a number
-    var randNum = Math.floor(Math.random() * 10 + 1); //generate a random number between 1 and 10
+    var userNum = parseInt(prompt('Guess any number between 1 - 10'));
+    var randNum = Math.floor(Math.random() * 10 + 1);
     console.log(randNum);
-    var randGuess = 0; //create guess counter
+    var randGuess = 0;
 
-    while (randGuess >= 0 && randGuess < 4) { //run the following code while these expressions are true
-      if (userNum < randNum) { //if user guess is lower than random number, run the following code
-        userNum = parseInt(prompt('Too low, guess again')); //prompt user to guess again
-        randGuess++; //increase guesses counter by 1
-      } else if (userNum > randNum) { //if user guess is higher than random number, run the following code
-        userNum = parseInt(prompt('Too high, guess again')); //prompt user to guess again
-        randGuess++; //increase guesses counter by 1
-      } else if(userNum === randNum){ //if user guess is equal to random number, run the following code
-        alert('You nailed it!'); //alert the user they guessed correctly
-        console.log('You nailed it!'); //log the result
+    while (randGuess >= 0 && randGuess < 4) {
+      if (userNum < randNum) {
+        userNum = parseInt(prompt('Too low, guess again'));
+        randGuess++;
+      } else if (userNum > randNum) {
+        userNum = parseInt(prompt('Too high, guess again'));
+        randGuess++;
+      } else if (userNum === randNum) {
+        alert('You nailed it!');
+        console.log('You nailed it!');
         correctAnswer++;
         break;
       } else {
@@ -115,42 +114,42 @@ document.getElementById('Emery').onclick = function(){
         randGuess++;
       }
     }
-    if (randGuess <= 4 && userNum !== randNum){
-      alert('You\'re out of guesses, better luck next time!'); //alert the user game is over
+    if (randGuess <= 4 && userNum !== randNum) {
+      alert('You\'re out of guesses, better luck next time!');
       console.log('You\'re out of guesses, better luck next time!');
     }
   }
 
   // Question #7
   function question7() {
-    var favColor = ['red', 'blue', 'orange', 'green']; //est var array
-    var favColorUX = ['red, blue, orange, and green']; //create readable var for UX
+    var favColor = ['red', 'blue', 'orange', 'green'];
+    var favColorUX = ['red, blue, orange, and green'];
 
-    var answer = true; //set answer to true
-    var guessCount = 0; //set # of guesses to 0
+    var answer = true;
+    var guessCount = 0;
 
-    while (answer === true){ //while answer = 0, run this code
+    while (answer === true) {
 
-      if(guessCount === 0){ //if guess count = 0, run the following code
-        var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase(); // prompt user and store as var
-        guessCount++; //update guessCount var by adding 1
-      } else if(guessCount < 6 && guessCount > 0) { //else if guessCount is less than 6 and greater than 0, run the following code
-        userColor = prompt('Nope guess again').toLowerCase(); //prompt user to answer question, store answer in var
-        guessCount++; //update guessCount var by adding 1 each time this code runs
-      } else if(guessCount === 6){ //else if count === 6, run the following code
-        alert('Close but no cigar, my 4 favorite colors are ' + favColorUX); //alert the user if this condition is met
+      if (guessCount === 0) {
+        var userColor = prompt('Can you guess 1 of my 4 favorite colors?').toLowerCase();
+        guessCount++;
+      } else if (guessCount < 6 && guessCount > 0) {
+        userColor = prompt('Nope guess again').toLowerCase();
+        guessCount++;
+      } else if (guessCount === 6) {
+        alert('Close but no cigar, my 4 favorite colors are ' + favColorUX);
         console.log('Close but no cigar, my 4 favorite colors are ' + favColorUX);
         answer = false;
       }
 
-      for(var j = 0; j < favColor.length; j++){ //use for loop to iterate through the length of the array favColor
+      for (var j = 0; j < favColor.length; j++) {
 
-        if (userColor === favColor[j]){ //if user input is equal to an element in the array
-          alert('You\'re right, my 4 favorite colors are ' + favColorUX); //alert the user youre correct if this condition is met
+        if (userColor === favColor[j]) {
+          alert('You\'re right, my 4 favorite colors are ' + favColorUX);
           console.log('You\'re right, my 4 favorite colors are ' + favColorUX);
-          guessCount++; //increment the guess count
+          guessCount++;
           correctAnswer++;
-          answer = false; //flip the value of answer to false
+          answer = false;
         }
       }
     }
